@@ -1,15 +1,29 @@
-#include <stdlib.h>
-#include <stdio.h>
 
-int	ft_isalpha(int c);
+#include "test_libft.h"
+#include "libft.h"
 
-int main(int argc, char **argv)
+int isalpha_alpha()
 {
-	if (argc != 2)
+	char c = 'F';
+	if (ft_isalpha(c))
 	{
-		printf("Provide an argument\n");
 		return (1);
 	}
-	printf("%d\n", ft_isalpha(argv[1]));
 	return (0);
+}
+
+int isalpha_nonalpha()
+{
+	char c = '\n';
+	if (!ft_isalpha(c))
+	{
+		return (1);
+	}
+	return (0);
+}
+
+void ft_isalpha_test()
+{
+	TEST_RESULT(isalpha_alpha());
+	TEST_RESULT(isalpha_nonalpha());
 }

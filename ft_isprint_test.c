@@ -1,23 +1,17 @@
+#include "test_libft.h"
 #include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
 
-int main(void)
+int isprint_printable()
 {
-	printf("%d\n", ft_isprint('g'));
-	printf("%d\n", ft_isprint('5'));
-	printf("%d\n", ft_isprint(1079));
-	printf("%d\n", ft_isprint('/'));
-	printf("%d\n", ft_isprint(' '));
-	printf("%d\n", ft_isprint('$'));
-	printf("%d\n", ft_isprint(664));
-	printf("\n");
-	printf("%d\n", isprint('g'));
-	printf("%d\n", isprint('5'));
-	printf("%d\n", isprint(1079));
-	printf("%d\n", isprint('/'));
-	printf("%d\n", isprint(' '));
-	printf("%d\n", isprint('$'));
-	printf("%d\n", isprint(664));
+	char c = 'F';
+	if (ft_isprint(c))
+	{
+		return (1);
+	}
 	return (0);
+}
+
+void ft_isprint_test(void)
+{
+	TEST_RESULT(isprint_printable());
 }

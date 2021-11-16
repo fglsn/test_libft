@@ -6,7 +6,11 @@ int main(void)
 	printf("\n********** FT_MEMSET **********\n");
 	ft_memset_test();
 	printf("*******************************\n");
-	// ft_bzero_test();
+
+	printf("\n********** FT_BZERO **********\n");
+	ft_bzero_test();
+	printf("******************************\n");
+
 	// ft_memcpy_test();
 	// ft_memccpy_test();
 	// ft_memmove_test();
@@ -25,14 +29,30 @@ int main(void)
 	// ft_strnstr_test();
 	// ft_strcmp_test();
 	// ft_strncmp_test();
-	printf("\n********** FT_ATOI **********\n");
+	printf("\n*********** FT_ATOI ***********\n");
 	ft_atoi_test();
 	printf("*****************************\n");
-	// ft_isalpha_test();
-	// ft_isdigit_test();
-	// ft_isalnum_test();
-	// ft_isascii_test();
-	// ft_isprint_test();
+
+	printf("\n********* FT_ISALPHA *********\n");
+	ft_isalpha_test();
+	printf("*****************************\n");
+
+	printf("\n********* FT_ISDIGIT *********\n");
+	ft_isdigit_test();
+	printf("*****************************\n");
+
+	printf("\n********* FT_ISALNUM *********\n");
+	ft_isalnum_test();
+	printf("*****************************\n");
+
+	printf("\n********* FT_ISASCII *********\n");
+	ft_isascii_test();
+	printf("*****************************\n");
+
+	printf("\n********* FT_ISPRINT *********\n");
+	ft_isprint_test();
+	printf("*****************************\n");
+
 	// ft_toupper_test();
 	// ft_tolower_test();
 	// ft_memalloc_test();

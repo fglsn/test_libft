@@ -1,24 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_isascii_test.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 10:31:58 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/02 10:41:53 by ishakuro         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "test_libft.h"
+#include "libft.h"
 
-#include <stdio.h>
-
-int	ft_isascii(int c);
-
-int main(void)
+int	ft_isascii_non_ascii()
 {
-	printf("%d\n", ft_isascii('g'));
-	printf("%d\n", ft_isascii('5'));
-	printf("%d\n", ft_isascii(1079));
-	printf("%d\n", ft_isascii('/'));
+	if (!ft_isascii('0x80'))
+	{
+		return (1);
+	}
 	return (0);
+}
+
+int	ft_isascii_ascii()
+{
+	char c = '\n';
+	if (ft_isascii(c))
+	{
+		return (1);
+	}
+	return (0);
+}
+
+
+void ft_isascii_test(void)
+{
+	TEST_RESULT(ft_isascii_ascii());
+	TEST_RESULT(ft_isascii_non_ascii());
 }
