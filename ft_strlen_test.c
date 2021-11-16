@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "libft.h"
+#include "test_libft.h"
 #include <string.h>
 
 int main(int argc, char **argv)
@@ -11,6 +12,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	printf("%zu\n", ft_strlen(argv[1]));
+	TEST_RESULT(ft_strlen(""));
 	printf("%zu\n", strlen(argv[1]));
 	return (0);
 }

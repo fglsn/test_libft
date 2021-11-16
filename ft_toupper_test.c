@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "test_libft.h"
 #include <stdio.h>
 #include <ctype.h>
 
@@ -8,7 +8,6 @@ int main(void)
 
 	b = toupper(b);
 	printf("%c\n", b);
-
 	printf("%c\n", ft_toupper('g'));
 	printf("%c\n", ft_toupper('5'));
 	printf("%d\n", ft_toupper(1079));

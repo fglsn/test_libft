@@ -1,57 +1,44 @@
 #include "libft.h"
+#include "test_libft.h"
 #include <stdio.h>
 
-void test_memset(void)
+int memset_basic(void)
 {
-	char test[0xF00];
-	char test1[0xF00];
-	const int size = 42;
+	char test[] = "TEST";
+	char test1[] = "TEST";
+	const int size = 5;
 
-	memset(test, 'Z', size);
-	memset(test1, 'Z', size);
-
-
-	memset(test, 'A', size);
-	ft_memset(test1, 'A', size);
-
-	if (memcmp(test, test1, 0x00) == 0)
+	if (memcmp(memset(test, 'A', size), ft_memset(test1, 'A', size), size) == 0)
 	{
-		printf("Memset ok\n");
-		return ;
+		return (1);
 	}
+	return (0);
 }
 
-void test_memset_unsigned(void) // ??
+int memset_unsigned(void)
 {
-	char test[0xF00];
-	char test1[0xF00];
-	const int size = 22;
+	char test[] = "TEST";
+	char test1[] = "TEST";
+	const int size = 5;
 
-	memset(test, 'Z', size);
-	memset(test1, 'Z', size);
-
-
-	memset(test, '\200', size);
-	ft_memset(test1, '\200', size);
-
-	if (memcmp(test, test1, size) == 0)
+	if (memcmp(memset(test, '\200', size), ft_memset(test1, '\200', size), size) == 0)
 	{
-		printf("Memset ok (unsigned)\n");
-		return ;
+		return (1);
 	}
-	printf("Chars are not unsigned\n");
+	return (0);
 }
 
-void test_memset_null(void)
-{
-	const int size = 42;
-	ft_memset(NULL, 'A', size);
-	printf("Should've segfault! Not OK\n");
-}
+// int memset_null(void)
+// {
+// 	const int size = 42;
+// 	ft_memset(NULL, 'A', size);
+// 	printf("Should've segfault! Not OK\n");
+// 	return (0);
+// }
 
-int main(void)
+void	ft_memset_test()
 {
-	test_memset();
-	test_memset_unsigned();
-	test_memset_null();
+	TEST_RESULT(memset_basic());
+	TEST_RESULT(memset_unsigned());
+	//TEST_RESULT(test_memset_null);
 }

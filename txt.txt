@@ -1,1 +1,3 @@
 -Wpedantic -Wunused -Wconversion -Wunreachable-code -Wtype-limits
+
+gcc -Wall -Werror -Wextra libft.h test_libft.h src/ft_atoi.c src/ft_memset.c ft_memset_test.c main.c ft_atoi_test.c
