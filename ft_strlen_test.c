@@ -1,18 +1,36 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 #include "test_libft.h"
-#include <string.h>
 
-int main(int argc, char **argv)
+#define	STR	"Some kinda string for testing."
+
+int strlen_basic()
 {
-	if (argc != 2)
-	{
-		printf("Provide an argument\n");
-		return (1);
-	}
-	printf("%zu\n", ft_strlen(argv[1]));
-	TEST_RESULT(ft_strlen(""));
-	printf("%zu\n", strlen(argv[1]));
-	return (0);
+	char *str = STR;
+	return (strlen(str) == ft_strlen(str));
+}
+
+int strlen_empty_str()
+{
+	char *str = "";
+	return (strlen(str) == ft_strlen(str));
+}
+
+int strlen_unicode()
+{
+	char *str = "Привет";
+	return (strlen(str) == ft_strlen(str));
+}
+
+int strlen_terminator()
+{
+	char *str = "Str \0 ing";
+	return (strlen(str) == ft_strlen(str));
+}
+
+void ft_strlen_test()
+{
+	TEST_RESULT(strlen_basic());
+	TEST_RESULT(strlen_empty_str());
+	TEST_RESULT(strlen_unicode());
+	TEST_RESULT(strlen_terminator());
 }

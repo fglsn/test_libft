@@ -8,11 +8,11 @@ int main(void)
 	TEST_CALL(ft_memcpy_test);
 	TEST_CALL(ft_memccpy_test);
 	TEST_CALL(ft_memmove_test);
-	// TEST_CALL(ft_memchr_test);
-	// TEST_CALL(ft_memcmp_test);
-	// TEST_CALL(ft_strlen_test);
-	// TEST_CALL(ft_strdup_test);
-	// TEST_CALL(ft_strcpy_test);
+	TEST_CALL(ft_memchr_test);
+	TEST_CALL(ft_memcmp_test);
+	TEST_CALL(ft_strlen_test);
+	TEST_CALL(ft_strdup_test);
+	TEST_CALL(ft_strcpy_test);
 	// TEST_CALL(ft_strncpy_test);
 	// TEST_CALL(ft_strcat_test);
 	// TEST_CALL(ft_strncat_test);

@@ -1,17 +1,26 @@
 #include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-int main(int argc, char **argv)
-{	
-	char *str;
-	char *copy;
-	if (argc < 1)
-	{
-		printf("Provide an argument string");
-		return (1);
-	}
-	str = argv[1];
-	copy = ft_strdup(str);
-	printf("%s\n%s\n", str, copy);
-	return (0);
+#define	STR	"Some kinda string for testing."
+
+int strdup_basic()
+{
+	char *str = STR;
+	char *copy1 = strdup(str);
+	char *copy2 = strdup(str);
+	return(!strcmp(copy1, copy2));
+}
+
+int strdup_empty_string()
+{
+	char *str = "";
+	char *copy = strdup(str);
+	return(!strcmp(str, copy));
+}
+
+void ft_strdup_test()
+{
+	TEST_RESULT(strdup_basic());
+	TEST_RESULT(strdup_empty_string());
+	// TEST_RESULT();
 }

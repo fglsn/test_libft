@@ -64,12 +64,12 @@ TESTS = ft_memset_test.c \
 					ft_memcpy_test.c \
 					ft_memccpy_test.c \
 					ft_memmove_test.c \
-#					ft_memchr_test.c \
+					ft_memchr_test.c \
 					ft_memcmp_test.c \
 					ft_strlen_test.c \
 					ft_strdup_test.c \
 					ft_strcpy_test.c \
-					ft_strncpy_test.c \
+#					ft_strncpy_test.c \
 					ft_strcat_test.c \
 					ft_strncat_test.c \
 					ft_strlcat_test.c \
