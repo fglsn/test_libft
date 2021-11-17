@@ -7,10 +7,15 @@
 # include <stdio.h>
 
 #define TEST_RESULT(RESULT) \
-if (RESULT == 1) \
+if (RESULT) \
 	printf("OK: Test %s passed\n", #RESULT); \
-else if (!RESULT) \
+else \
 	printf("-KO-: Test %s fails\n", #RESULT);
+
+#define TESTCALL(TEST) \
+printf("********** " #TEST " *********\n\n"); \
+TEST(); \
+printf("************************\n");
 
 void	ft_memset_test();
 void	ft_bzero_test();

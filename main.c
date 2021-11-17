@@ -29,9 +29,7 @@ int main(void)
 	// ft_strnstr_test();
 	// ft_strcmp_test();
 	// ft_strncmp_test();
-	printf("\n*********** FT_ATOI ***********\n");
-	ft_atoi_test();
-	printf("*****************************\n");
+	TESTCALL(ft_atoi_test);
 
 	printf("\n********* FT_ISALPHA *********\n");
 	ft_isalpha_test();

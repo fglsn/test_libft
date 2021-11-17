@@ -30,7 +30,6 @@ FUNCTIONS = src/ft_memset.c \
 					src/ft_toupper.c \
 					src/ft_tolower.c \
 					src/ft_memalloc.c \
-					src/ft_memdel.c \
 					src/ft_strnew.c \
 					src/ft_strdel.c\
 					src/ft_strclr.c \

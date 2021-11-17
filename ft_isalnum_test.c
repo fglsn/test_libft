@@ -25,11 +25,7 @@ int isalnum_num()
 int isalnum_nonalnum()
 {
 	char num = '\n';
-	if (!ft_isalnum(num))
-	{
-		return (1);
-	}
-	return (0);
+	return (!ft_isalnum(num));
 }
 
 void ft_isalnum_test()
