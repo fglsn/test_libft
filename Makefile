@@ -61,9 +61,9 @@ TESTS = ft_memset_test.c \
 					ft_isascii_test.c \
 					ft_isprint_test.c \
 					ft_isdigit_test.c \
-#					ft_memcpy_test.c \
+					ft_memcpy_test.c \
 					ft_memccpy_test.c \
-					ft_memchr_test.c \
+#					ft_memchr_test.c \
 					ft_memcmp_test.c \
 					ft_strlen_test.c \
 					ft_strdup_test.c \
