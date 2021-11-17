@@ -7,7 +7,7 @@ int main(void)
 	TEST_CALL(ft_bzero_test);
 	TEST_CALL(ft_memcpy_test);
 	TEST_CALL(ft_memccpy_test);
-	// TEST_CALL(ft_memmove_test);
+	TEST_CALL(ft_memmove_test);
 	// TEST_CALL(ft_memchr_test);
 	// TEST_CALL(ft_memcmp_test);
 	// TEST_CALL(ft_strlen_test);

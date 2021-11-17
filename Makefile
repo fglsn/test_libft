@@ -63,6 +63,7 @@ TESTS = ft_memset_test.c \
 					ft_isdigit_test.c \
 					ft_memcpy_test.c \
 					ft_memccpy_test.c \
+					ft_memmove_test.c \
 #					ft_memchr_test.c \
 					ft_memcmp_test.c \
 					ft_strlen_test.c \

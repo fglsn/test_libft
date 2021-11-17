@@ -16,7 +16,7 @@ int	memcpy_basic()
 	memcpy(dst1, src, strlen(src));
 	ft_memcpy(dst2, src, strlen(src));
 
-	return (!strcmp(dst1, dst2));
+	return (!memcmp(dst1, dst2, strlen(DST)));
 }
 
 int	memcpy_zero_size_n()
@@ -26,7 +26,7 @@ int	memcpy_zero_size_n()
 	char src[] = SRC;
 
 	ft_memcpy(dst, src, 0);
-	return(!strcmp(to_compare, dst));
+	return(!memcmp(to_compare, dst, strlen(DST)));
 }
 
 
