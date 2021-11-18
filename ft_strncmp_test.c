@@ -1,28 +1,64 @@
-#include <stdio.h>
 #include "libft.h"
+#include "test_libft.h"
 
-// int main(int argc, char **argv)
-// {
-// 	if (argc != 4)
-// 	{
-// 		printf("Provide two strings and int.\n");
-// 		return (1);
-// 	}
-// 	char *s1 = argv[1];
-// 	char *s2 = argv[2];
-// 	printf("%d\n", strncmp(s1, s2, atoi(argv[3])));
-// 	printf("%d\n", ft_strncmp(s1, s2, atoi(argv[3])));
-// 	return (0);
-// }
+#define	SRC	"Source string."
+#define	DST	"This is destination string."
+#define	STR	"Some kinda string for testing."
 
-int main(void)
+int strncmp_equal()
 {
-	char	*s1 = "\x12\xff\x65\x12\xbd\xde\xad";
-	char	*s2 = NULL;
+	char *str = STR;
+	char *str2 = STR;
 
-	int i = (strncmp(s1, s2, 6));
-	int j = (ft_strncmp(s1, s2, 6));
+	int i = strncmp(str, str2, 30);
+	int j = ft_strncmp(str, str2, 30);
+	return (i == j);
+}
 
-	printf("%d\n", i);
-	printf("%d\n", j);
+int strncmp_not_equal()
+{
+	char *str = DST;
+	char *str2 = STR;
+
+	int i = strncmp(str, str2, 15);
+	int j = ft_strncmp(str, str2, 15);
+	return (i == j);
+}
+
+int strncmp_basic()
+{
+	char *str = "ABCDE";
+	char *str2 = "ABCDe";
+
+	int i = strncmp(str, str2, 4);
+	int j = ft_strncmp(str, str2, 4);
+	return (i == j);
+}
+
+int strncmp_basic_2()
+{
+	char *str = "ABCDEf";
+	char *str2 = "ABCDEf";
+
+	int i = strncmp(str, str2, 5);
+	int j = ft_strncmp(str, str2, 5);
+	return (i == j);
+}
+
+int strncmp_empty()
+{
+	char *str = "";
+	char *str2 = "";
+	int i = strncmp(str, str2, 1);
+	int j = ft_strncmp(str, str2, 1);
+	return (i == j);
+}
+
+void ft_strncmp_test()
+{
+	TEST_RESULT(strncmp_equal());
+	TEST_RESULT(strncmp_not_equal());
+	TEST_RESULT(strncmp_basic());
+	TEST_RESULT(strncmp_basic_2());
+	TEST_RESULT(strncmp_empty());
 }

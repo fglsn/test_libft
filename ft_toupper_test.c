@@ -1,33 +1,35 @@
-#include "test_libft.h"
-#include <stdio.h>
+#include "libft.h"
 #include <ctype.h>
+#include "test_libft.h"
 
-int main(void)
+#define	SRC	"Source string."
+#define	DST	"This is destination string."
+#define	STR	"Some kinda string for testing."
+
+int toupper_basic()
 {
-	char b = 'b';
+	char a = ft_toupper('A');
+	char b = toupper('A');
+	return(a == b);
+}
 
-	b = toupper(b);
-	printf("%c\n", b);
-	printf("%c\n", ft_toupper('g'));
-	printf("%c\n", ft_toupper('5'));
-	printf("%d\n", ft_toupper(1079));
-	printf("%d\n", ft_toupper('/'));
-	printf("%d\n", ft_toupper(' '));
-	printf("%d\n", ft_toupper('$'));
-	printf("%d\n", ft_toupper(664));
-	printf("%c\n", ft_toupper('A'));
-	printf("%c\n", ft_toupper('z'));
-	printf("%c\n", ft_toupper('p'));
-	printf("\n");
-	printf("%c\n", toupper('g'));
-	printf("%d\n", toupper('5'));
-	printf("%d\n", toupper(1079));
-	printf("%d\n", toupper('/'));
-	printf("%d\n", toupper(' '));
-	printf("%d\n", toupper('$'));
-	printf("%d\n", toupper(664));
-	printf("%c\n", toupper('A'));
-	printf("%c\n", toupper('z'));
-	printf("%c\n", toupper('p'));
-	return (0);
+int toupper_basic_2()
+{
+	char a = ft_toupper('z');
+	char b = toupper('z');
+	return(a == b);
+}
+
+int toupper_non_alpha()
+{
+	char a = ft_toupper('1');
+	char b = toupper('1');
+	return(a == b);
+}
+
+void ft_toupper_test()
+{
+	TEST_RESULT(toupper_basic());
+	TEST_RESULT(toupper_basic_2());
+	TEST_RESULT(toupper_non_alpha());
 }

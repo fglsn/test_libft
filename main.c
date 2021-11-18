@@ -2,8 +2,8 @@
 #include "test_libft.h"
 
 int main(void)
-{
-	TEST_CALL(ft_atoi_test);
+{	
+	TEST_CALL(ft_memset_test);
 	TEST_CALL(ft_bzero_test);
 	TEST_CALL(ft_memcpy_test);
 	TEST_CALL(ft_memccpy_test);
@@ -13,23 +13,24 @@ int main(void)
 	TEST_CALL(ft_strlen_test);
 	TEST_CALL(ft_strdup_test);
 	TEST_CALL(ft_strcpy_test);
-	// TEST_CALL(ft_strncpy_test);
-	// TEST_CALL(ft_strcat_test);
-	// TEST_CALL(ft_strncat_test);
-	// TEST_CALL(ft_strlcat_test);
-	// TEST_CALL(ft_strchr_test);
-	// TEST_CALL(ft_strrchr_test);
-	// TEST_CALL(ft_strstr_test);
-	// TEST_CALL(ft_strnstr_test);
-	// TEST_CALL(ft_strcmp_test);
-	// TEST_CALL(ft_strncmp_test);
+	TEST_CALL(ft_strncpy_test);
+	TEST_CALL(ft_strcat_test);
+	TEST_CALL(ft_strncat_test);
+	TEST_CALL(ft_strlcat_test);
+	TEST_CALL(ft_strchr_test);
+	TEST_CALL(ft_strrchr_test);
+	TEST_CALL(ft_strstr_test);
+	TEST_CALL(ft_strnstr_test);
+	TEST_CALL(ft_strcmp_test);
+	TEST_CALL(ft_strncmp_test);
+	TEST_CALL(ft_atoi_test);
 	TEST_CALL(ft_isalpha_test);
 	TEST_CALL(ft_isdigit_test);
 	TEST_CALL(ft_isalnum_test);
 	TEST_CALL(ft_isascii_test);
 	TEST_CALL(ft_isprint_test);
-	// TEST_CALL(ft_toupper_test);
-	// TEST_CALL(ft_tolower_test);
+	TEST_CALL(ft_toupper_test);
+	TEST_CALL(ft_tolower_test);
 	// TEST_CALL(ft_memalloc_test);
 	// TEST_CALL(ft_memdel_test);
 	// TEST_CALL(ft_strnew_test);

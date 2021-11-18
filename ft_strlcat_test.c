@@ -1,29 +1,55 @@
 #include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-void strlcat_test1(void)
+#define	SRC	"Source string."
+#define	DST	"This is destination string."
+#define	STR	"Some kinda string for testing."
+
+int strlcat_basic(void)
 {
 	char dest[] = "kust";
 	char src[] = "ik i dustik doma sidyat";
 	size_t result;
+	size_t result2;
 	size_t size = 150;
 	char buf[size];
+	char buf2[size];
 
 	strcpy(buf, dest);
+	strcpy(buf2, dest);
 	result = strlcat(buf, src, size);
-	printf("%s\n", buf);
-	printf("Result of ft_strlcat: %zu\n", result);
-	if (result > size - 1)
-	{
-		printf("String truncated\n");
-	}
-	else
-	{
-		printf("Full string copied\n");
-	}
+	result2 = strlcat(buf2, src, size);
+	//printf("-%s-\n+%s+\n", buf, buf2);
+	return (result == result2);
+
+	// printf("Result of ft_strlcat: %zu\n", result2);
+	// if (result2 > size - 1)
+	// {
+	// 	printf("String truncated\n");
+	// }
+	// else
+	// {
+	// 	printf("Full string copied\n");
+	// }
 }
 
-void strlcat_basic(void)
+int strlcat_basic2()
+{
+	char dst[] = DST;
+	char dst2[] = DST;
+	char src[] = "Hello";
+	size_t size = 4;
+	size_t result1;
+	size_t result2;
+
+	result1 = strlcat(dst, src, size);
+	result2 = strlcat(dst2, src, size);
+	if (result1 != result2)
+		printf("-%s-\n+%s+\n", dst, dst2);
+	return (result1 == result2);
+}
+
+int strlcat_basic3()
 {
 	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
 	char buff1[0xF00] = "there is no stars in the sky";
@@ -32,41 +58,65 @@ void strlcat_basic(void)
 
 	strlcat(buff1, str, max);
 	ft_strlcat(buff2, str, max);
-	if (!strcmp(buff1, buff2))
-	{
-		printf("OK\n");
-		return;
-	}
-	printf("KO\n");
+	return (!strcmp(buff1, buff2));
 }
 
-void strlcat_test2(void)
+int	strlcat_empty_src()
 {
-	char dst[] = "HelloWorld";
-	char dst2[] = "HelloWorld";
-	char src[] = "Hello";
-	size_t size = 4;
-	size_t size1;
-	size_t size2;
+	char src[] = "";
+	char dst1[420] = DST;
+	char dst2[420] = DST;
 
-	size1 = strlcat(dst, src, size);
-	size2 = ft_strlcat(dst2, src, size);
-	if (!strcmp(dst, dst2))
-	{
-		printf("OK\n%zu | %zu\n", size1, size2);
-		printf("%s %s\n", dst, dst2);
-		return ;
-	}
-	printf("KO\n%zu | %zu\n", size1, size2);
+	strlcat(dst1, src, 6);
+	ft_strlcat(dst2, src, 6);
+	return (!strcmp(dst1, dst2));
 }
 
-int main(void)
+int	strlcat_empty_dst()
 {
-	strlcat_basic();
-	strlcat_test1();
-	strlcat_test2();
-	// char str[4];
-	// char src[] = "src";
-	// size_t n = ft_strlcat(str, src, 10);
-	// printf("%zu\n", n);
+	char src[] = SRC;
+	char dst1[420] = "";
+	char dst2[420] = "";
+
+	strlcat(dst1, src, 6);
+	ft_strlcat(dst2, src, 6);
+	return (!strcmp(dst1, dst2));
+}
+
+int strlcat_size_bigger_than_dstlen()
+{
+	char src[] = SRC;
+	char dst1[420] = DST;
+	char dst2[420] = DST;
+
+	strlcat(dst1, src, 42);
+	ft_strlcat(dst2, src, 42);
+	if (strcmp(dst1, dst2))
+		printf("-%s-\n+%s+\n", dst1, dst2);
+	return (!strcmp(dst1, dst2));
+}
+
+int strlcat_size_zero()
+{
+	char src[] = SRC;
+	char dst1[420] = DST;
+	char dst2[420] = DST;
+
+	strlcat(dst1, src, 0);
+	ft_strlcat(dst2, src, 0);
+	if (strcmp(dst1, dst2))
+		printf("-%s-\n+%s+\n", dst1, dst2);
+	return (!strcmp(dst1, dst2));
+}
+
+
+void ft_strlcat_test()
+{
+	TEST_RESULT(strlcat_basic());
+	TEST_RESULT(strlcat_basic2());
+	TEST_RESULT(strlcat_basic3());
+	TEST_RESULT(strlcat_empty_src());
+	TEST_RESULT(strlcat_empty_dst());
+	TEST_RESULT(strlcat_size_bigger_than_dstlen());
+	TEST_RESULT(strlcat_size_zero());
 }

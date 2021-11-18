@@ -57,3 +57,34 @@ ft_memset_test.c \
 					ft_putstr_fd_test.c \
 					ft_putendl_fd_test.c \
 					ft_putnbr_fd_test.c
+
+
+
+
+
+
+
+
+#include "libft.h"
+#include "test_libft.h"
+
+#define	SRC	"Source string."
+#define	DST	"This is destination string."
+#define	STR	"Some kinda string for testing."
+
+int _basic()
+{
+	
+}
+
+void ()
+{
+	TEST_RESULT();
+	TEST_RESULT();
+	TEST_RESULT();
+	TEST_RESULT();
+}
+
+/*
+** DESCRIPTION:
+*/

@@ -1,99 +1,68 @@
 #include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-int main(void)
+#define	STR	"Some kinda string for testing."
+
+int strrchr_basic()
 {
-	char *str = "Test string rumba krok";
+	char *str = STR;
 	char *s1 = strrchr(str, 114); //144 == 'r'
 	char *s2 = ft_strrchr(str, 114);
 
-	if (s1 == s2)
-	{
-		printf("OK\ns1 - %s (realfunc) \ns2 - %s\n", s1, s2);
-		return (0);
-	}
-	printf("Test failed\ns1 - '%s' (realfunc)\n", s1);
-	return (1);
+	return (s1 == s2);
 }
 
-//not found char
-// int main(void)
-// {
-// 	char *str = "Test string.";
-// 	char *s1 = strrchr(str, 'z'); 
-// 	char *s2 = ft_strrchr(str, 'z');
+int strrchr_non_found_char()
+{
+	char *str = STR;
+	char *s1 = strrchr(str, 'z'); 
+	char *s2 = ft_strrchr(str, 'z');
 
-// 	if (s1 == s2)
-// 	{
-// 		printf("OK\ns1 - %s (realfunc) \ns2 - %s\n", s1, s2);
-// 		return (0);
-// 	}
-// 	printf("Test failed\ns1 - '%s' (realfunc)\n", s1);
-// 	return (1);
-// }
+	return (s1 == s2);
+}
 
-//first char
-// int main(void)
-// {
-// 	char *str = "Test string";
-// 	char *s1 = strrchr(str, 'T');
-// 	char *s2 = ft_strrchr(str, 'T');
+int strrchr_first_char()
+{
+	char *str = STR;
+	char *s1 = strrchr(str, 'S');
+	char *s2 = ft_strrchr(str, 'S');
 
-// 	if (s1 == s2)
-// 	{
-// 		printf("OK\ns1 - %s\ns2 - %s\n", s1, s2);
-// 		return (0);
-// 	}
-// 	printf("Test failed\n");
-// 	return (1);
-// }
+	return (s1 == s2);
+}
 
-//last char
-// int main(void)
-// {
-// 	char *str = "Test string";
-// 	char *s1 = strrchr(str, 'g');
-// 	char *s2 = ft_strrchr(str, 'g');
+int strrchr_last_char()
+{
+	char *str = STR;
+	char *s1 = strrchr(str, '.');
+	char *s2 = ft_strrchr(str, '.');
 
-// 	if (s1 == s2)
-// 	{
-// 		printf("OK\ns1 - %s\ns2 - %s\n", s1, s2);
-// 		return (0);
-// 	}
-// 	printf("Test failed\n");
-// 	return (1);
-// }
+	return (s1 == s2);
+}
 
+int strrchr_unicode()
+{
+	char *str = "Привет!";
+	char *s1 = strrchr(str, L'и');
+	char *s2 = ft_strrchr(str, L'и');
 
-// // check for terminator
-// int main(void)
-// {
-// 	char *str = "there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
-// 	char *s1 = strrchr(str, '\0');
-// 	char *s2 = ft_strrchr(str, '\0');
+	return (s1 == s2);
+}
 
-// 	if (s1 == s2)
-// 	{
-// 		printf("OK\ns1 - [%s] (realfunc) \ns2 - [%s]\n", s1, s2);
-// 		return (0);
-// 	}
-// 	printf("Test failed\ns1 - '%s' (realfunc)\n", s1);
-// 	return (1);
-// }
+int strrchr_find_terminator()
+{
+	char *str = "Some kinda string \0for testing\0";
+	char *s1 = strrchr(str, '\0');
+	char *s2 = ft_strrchr(str, '\0');
 
+	return (s1 == s2);
+}
 
-// unicode
-// int main(void)
-// {
-// 	char *str = "īœ˙ˀ˘¯ˇ¸¯.œ«‘––™ª•¡¶¢˜ˀ";
-// 	char *s1 = strrchr(str, L'ª');
-// 	char *s2 = ft_strrchr(str, L'ª');
-
-// 	if (s1 == s2)
-// 	{
-// 		printf("OK\ns1 - %s (realfunc) \ns2 - %s\n", s1, s2);
-// 		return (0);
-// 	}
-// 	printf("Test failed\ns1 - '%s' (realfunc)\n", s1);
-// 	return (1);
-// }
+void ft_strrchr_test()
+{
+	TEST_RESULT(strrchr_basic());
+	TEST_RESULT(strrchr_non_found_char());
+	TEST_RESULT(strrchr_first_char());
+	TEST_RESULT(strrchr_last_char());
+	TEST_RESULT(strrchr_unicode());
+	TEST_RESULT(strrchr_find_terminator());
+}

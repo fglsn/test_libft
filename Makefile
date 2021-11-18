@@ -55,12 +55,6 @@ FUNCTIONS = src/ft_memset.c \
 
 TESTS = ft_memset_test.c \
 					ft_bzero_test.c \
-					ft_atoi_test.c \
-					ft_isalnum_test.c \
-					ft_isalpha_test.c \
-					ft_isascii_test.c \
-					ft_isprint_test.c \
-					ft_isdigit_test.c \
 					ft_memcpy_test.c \
 					ft_memccpy_test.c \
 					ft_memmove_test.c \
@@ -69,7 +63,7 @@ TESTS = ft_memset_test.c \
 					ft_strlen_test.c \
 					ft_strdup_test.c \
 					ft_strcpy_test.c \
-#					ft_strncpy_test.c \
+					ft_strncpy_test.c \
 					ft_strcat_test.c \
 					ft_strncat_test.c \
 					ft_strlcat_test.c \
@@ -79,12 +73,15 @@ TESTS = ft_memset_test.c \
 					ft_strnstr_test.c \
 					ft_strcmp_test.c \
 					ft_strncmp_test.c \
+					ft_atoi_test.c \
 					ft_isalpha_test.c \
+					ft_isdigit_test.c \
+					ft_isalnum_test.c \
 					ft_isascii_test.c \
 					ft_isprint_test.c \
 					ft_toupper_test.c \
 					ft_tolower_test.c \
-					ft_memalloc_test.c \
+#					ft_memalloc_test.c \
 					ft_memdel_test.c \
 					ft_strnew_test.c \
 					ft_strdel_test.c\

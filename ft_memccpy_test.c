@@ -6,7 +6,7 @@
 /*   By: ishakuro <ishakuro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 22:16:24 by ishakuro          #+#    #+#             */
-/*   Updated: 2021/11/17 14:06:42 by ishakuro         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:36:27 by ishakuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	memccpy_basic()
 	char dst2[] = "This is destination string.";
 	char *r1 = memccpy(dst1, src, ' ', 10);
 	char *r2 = ft_memccpy(dst2, src, ' ', 10);
-	// printf("-%s-\n+%s+\n", r1, r2);
+	//printf("-%s-\n+%s+\n", r1, r2);
 	return (!memcmp(r1, r2, 15));
 }
 

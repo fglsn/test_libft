@@ -1,23 +1,35 @@
 #include "libft.h"
-#include <stdio.h>
 #include <ctype.h>
+#include "test_libft.h"
 
-int main(void)
+#define	SRC	"Source string."
+#define	DST	"This is destination string."
+#define	STR	"Some kinda string for testing."
+
+int tolower_basic()
 {
-	printf("%c\n", ft_tolower('G'));
-	printf("%c\n", ft_tolower('7'));
-	printf("%d\n", ft_tolower(1079));
-	printf("%d\n", ft_tolower('/'));
-	printf("%c\n", ft_tolower('A'));
-	printf("%c\n", ft_tolower('z'));
-	printf("%c\n", ft_tolower('K'));
-	printf("\n");
-	printf("%c\n", tolower('g'));
-	printf("%c\n", tolower('7'));
-	printf("%d\n", tolower(1079));
-	printf("%d\n", tolower('/'));
-	printf("%c\n", tolower('A'));
-	printf("%c\n", tolower('z'));
-	printf("%c\n", tolower('K'));
-	return (0);
+	char a = ft_tolower('A');
+	char b = tolower('A');
+	return(a == b);
+}
+
+int tolower_basic_2()
+{
+	char a = ft_tolower('a');
+	char b = tolower('a');
+	return(a == b);
+}
+
+int tolower_non_alpha()
+{
+	char a = ft_tolower('1');
+	char b = tolower('1');
+	return(a == b);
+}
+
+void ft_tolower_test()
+{
+	TEST_RESULT(tolower_basic());
+	TEST_RESULT(tolower_basic_2());
+	TEST_RESULT(tolower_non_alpha());
 }
