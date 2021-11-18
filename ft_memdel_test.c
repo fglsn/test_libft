@@ -1,28 +1,30 @@
+#include "test_libft.h"
 #include "libft.h"
-#include <stdio.h>
 
-void	memdel_test(void)
+int	memdel_basic()
 {
 	void *mem = ft_memalloc(5);
 
 	ft_memdel(&mem);
 	if (mem == NULL)
 	{
-		printf("OK\n");
-		return ;
+		return (1);
 	}
-	printf("KO!\n");
-}
-
-void null_test(void)
-{
-	ft_memdel(NULL);
-}
-
-
-int main(void)
-{
-	memdel_test();
-	null_test();
 	return (0);
+}
+
+int memdel_check()
+{
+	void	*memory= malloc(42);
+	ft_memdel(&memory);
+	if (memory != NULL)
+		return (0);
+	return (1);
+}
+
+
+void ft_memdel_test()
+{
+	TEST_RESULT(memdel_basic());
+	TEST_RESULT(memdel_check());
 }

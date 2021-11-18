@@ -1,36 +1,35 @@
 #include "libft.h"
-#include <stdio.h> 
+#include "test_libft.h"
 
+#define	STR	"Some kinda string for testing."
 
-// int main(void)
-// {
-// 	int i = 0;
-// 	char	*s = "0 0 0 0 0 0 0 0 0";
-// 	char	**result = ft_strsplit(s, ' ');
-// 	while (result[i])
-// 	{
-// 		printf("%s\n", result[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-
-
-void strsplit_check_null(void)
+int compare(char **str, char **str2)
 {
-	char	**ret = ft_strsplit(NULL, ' ');
-	if (!ret)
+	for (; *str; str++ && str2++)
 	{
-		printf("Test OK\n");
-		return ;
+		if (*str == NULL || strcmp(*str, *str2))
+		{
+			return (0);
+		}
 	}
-	printf("Test KO");
-	return ;
+	return (1);
 }
 
-int main(void)
+int strsplit_basic()
 {
-	
-	strsplit_check_null();
-	return (0);
+	char *to_comp[6] = {"Some", "kinda", "string", "for", "testing.", NULL};
+	char **res = ft_strsplit(STR, ' ');
+	return (compare(to_comp, res));
+}
+
+int strsplit_empty()
+{
+	char *to_comp[6] = {"Some", "kinda", "string", "for", "testing.", NULL};
+	char **res = ft_strsplit(STR, ' ');
+	return (compare(to_comp, res));
+}
+
+void ft_strsplit_test()
+{
+	TEST_RESULT(strsplit_basic());
 }

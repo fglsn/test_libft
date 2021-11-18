@@ -1,5 +1,5 @@
 #include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
 char to_upper(char c)
 {
@@ -10,24 +10,10 @@ char to_upper(char c)
 	return (c);
 }
 
-void strmap_test(void)
+void ft_strmap_test(void)
 {
-	char str[] = "hello world\n";
+	char str[] = "hello world";
 
 	char *new = ft_strmap(str, to_upper);
 	printf("%s\n", new);
-}
-
-void null_check(void)
-{
-	char str[] = "hello world\n";
-
-	char *new = ft_strmap(str, NULL);
-	printf("%s\n", new);
-}
-
-int main(void)
-{
-	strmap_test();
-	null_check();
 }

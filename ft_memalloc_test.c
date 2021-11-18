@@ -1,16 +1,16 @@
 #include "libft.h"
 #include <stdio.h>
+#include "test_libft.h"
 
-void	memalloc_test(void)
+int	memalloc_zeroes()
 {
 	size_t	size = 42;
 	char	*new_mem;
-
 	new_mem = ft_memalloc(size);
 	if (!new_mem)
 	{
 		printf("NULL returned");
-		return ;
+		return (0);
 	}
 	size_t i = 0;
 	while (i < size)
@@ -18,15 +18,21 @@ void	memalloc_test(void)
 		if (new_mem[i] != 0)
 		{
 			printf("Memory is not initialized to 0\n");
-			return ;
+			return (0);
 		}
 		i++;
 	}
-	printf("OK! Memoory initialized to 0\n");
+	return (1);
 }
 
-int main(void)
+int memalloc_free()
 {
-	memalloc_test();
-	return (0);
+	free(ft_memalloc(15));
+	return (1);
+}
+
+void ft_memalloc_test()
+{
+	TEST_RESULT(memalloc_zeroes());
+	TEST_RESULT(memalloc_free());
 }

@@ -1,30 +1,21 @@
 #include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-void strclr_test(void)
+int strclr_basic()
 {
 	char str[] = "Test string\n";
 	char comp[13];
 
 	memset(comp, '\0', 12);
 	ft_strclr(str);
-	if (str[0] == '\0')
+	if (str[0] == '\0' && !memcmp(str, comp, 12))
 	{
-		printf("OK\n");
+		return (1);
 	}
-	if (!memcmp(str, comp, 12))
-	{
-		printf("OK, zeroed\n");
-	}
+	return (0);
 }
 
-void null_check(void)
+void ft_strclr_test()
 {
-	ft_strclr(NULL);
-}
-
-int main(void)
-{
-	strclr_test();
-	null_check();
+	TEST_RESULT(strclr_basic());
 }

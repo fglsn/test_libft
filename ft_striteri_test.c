@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-void	ft_putstring(unsigned int i, char *s)
+void	ft_putstring_2(unsigned int i, char *s)
 {
 	if ((i % 1) == 0)
 		s[i] = ft_toupper(s[i]);
@@ -13,20 +13,10 @@ void	ft_putstring(unsigned int i, char *s)
 void ft_striteri_test(void)
 {
 	char *str = strdup("Test striteri");
-	ft_striteri(str, &ft_putstring);
+	ft_striteri(str, &ft_putstring_2);
 	printf("%s", str);
 }
 
-void null_check(void)
-{
-	ft_striteri("sdss", NULL);
-}
-
-int main(void)
-{
-	ft_striteri_test();
-	//null_check();
-}
 
 // void	alternate(unsigned int i, char *string)
 // {

@@ -1,56 +1,54 @@
 #include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-void strequ_test (void)
+#define	SRC	"Source string."
+#define	DST	"This is destination string."
+#define	STR	"Some kinda string for testing."
+
+int strequ_equal()
 {
-	char s1[] = "Hell0";
-	char s2[] = "Hello";
+	char *str = STR;
+	char *str2 = STR;
 
-	char s3[] = "123Z";
-	char s4[] = "123A";
-
-	char s5[] = "Hello";
-	char s6[] = "Hello";
-
-	char s7[] = " ";
-	char s8[] = " ";
-
-	char s9[] = "";
-	char s10[] = "";
-
-	char s11[3];
-	char s12[0];
-
-	char *s13 = "\0";
-	char s14[0];
-
-	char s15[0];
-	char s16[0];
-
-	char s17[] = "\n";
-	char s18[] = "\v";
-
-	char *str = "BEBEBE";
-	
-
-	printf("%d\n", ft_strequ(s1, s2));
-	printf("%d\n", ft_strequ(s3, s4));
-	printf("%d\n", ft_strequ(s5, s6));
-	printf("%d\n", ft_strequ(s7, s8));
-	printf("%d\n", ft_strequ(s9, s10));
-	printf("%d\n", ft_strequ(s11, s12));
-	printf("%d\n", ft_strequ(s13, s14));
-	printf("%d\n", ft_strequ(s15, s16));
-	printf("%d\n", ft_strequ(s17, s18));
-	
-	printf("%d\n", ft_strequ("string", "string"));
-	printf("%d\n", ft_strequ("strin1g", "string"));
-	printf("%d\n", ft_strequ(str, str));
-	ft_strequ(str, NULL);
-	ft_strequ(NULL, NULL);
+	return (ft_strequ(str, str2));
 }
 
-int main(void)
+int strequ_not_equal()
 {
-	strequ_test();
+	char *str = DST;
+	char *str2 = STR;
+
+	return (!ft_strequ(str, str2));
+}
+
+int strequ_basic()
+{
+	char *str = "ABCDE";
+	char *str2 = "ABCDe";
+
+	return (!ft_strequ(str, str2));
+}
+
+int strequ_basic_2()
+{
+	char *str = "ABCDEf";
+	char *str2 = "ABCDEf";
+
+	return (ft_strequ(str, str2));
+}
+
+int strequ_empty()
+{
+	char *str = "";
+	char *str2 = "";
+	return (ft_strequ(str, str2));
+}
+
+void ft_strequ_test()
+{
+	TEST_RESULT(strequ_equal());
+	TEST_RESULT(strequ_not_equal());
+	TEST_RESULT(strequ_basic());
+	TEST_RESULT(strequ_basic_2());
+	TEST_RESULT(strequ_empty());
 }

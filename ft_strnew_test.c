@@ -1,15 +1,13 @@
 #include "libft.h"
-#include <stdio.h>
-#include <malloc/malloc.h>
+#include "test_libft.h"
 
-
-void test_mem(void)
+int strnew_basic()
 {
 	free(ft_strnew(5));
-	printf("OK!\n");
+	return (1);
 }
 
-void test_terminator(void)
+int strnew_zeroes()
 {
 	size_t size = 42;
 	char *result = ft_strnew(size);
@@ -17,15 +15,16 @@ void test_terminator(void)
 	{
 		if (*result++ != 0)
 		{
-			printf("Function doesnt allocate 0s into mem\n");
+			printf("Function doesnt initialize mem to 0s\n");
+			return (0);
 		}
 		size--;
 	}
-	printf("Memory filled with 0s\n");
+	return (1);
 }
 
-int main(void)
+void ft_strnew_test()
 {
-	test_mem();
-	test_terminator();
+	TEST_RESULT(strnew_basic());
+	TEST_RESULT(strnew_zeroes());
 }

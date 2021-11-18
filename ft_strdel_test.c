@@ -1,37 +1,29 @@
 #include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-void	strdel_test(void)
+int	strdel_basic()
 {
 	char *mem = ft_memalloc(15);
-
 	memset(mem, 'A', 15);
-
-	size_t i = 0;
-	while (i < 15)
-	{
-		printf("%c", mem[i]);
-		i++;
-	}
-	printf("\n");
-	char **ptr = &mem;
-	ft_strdel(ptr);
+	ft_strdel(&mem);
 	if (mem == NULL)
 	{
-		printf("OK\n");
-		return ;
+		return (1);
 	}
-	printf("KO!\n");
-}
-
-void null_test(void)
-{
-	ft_strdel(NULL);
-}
-
-int main(void)
-{
-	strdel_test();
-	null_test();
 	return (0);
+}
+
+int strdel_check()
+{
+	char	*memory= malloc(42);
+	ft_strdel(&memory);
+	if (memory != NULL)
+		return (0);
+	return (1);
+}
+
+void ft_strdel_test()
+{
+	TEST_RESULT(strdel_basic());
+	TEST_RESULT(strdel_check());
 }

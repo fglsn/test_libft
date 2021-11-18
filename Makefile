@@ -30,6 +30,7 @@ FUNCTIONS = src/ft_memset.c \
 					src/ft_toupper.c \
 					src/ft_tolower.c \
 					src/ft_memalloc.c \
+					src/ft_memdel.c \
 					src/ft_strnew.c \
 					src/ft_strdel.c\
 					src/ft_strclr.c \
@@ -81,7 +82,7 @@ TESTS = ft_memset_test.c \
 					ft_isprint_test.c \
 					ft_toupper_test.c \
 					ft_tolower_test.c \
-#					ft_memalloc_test.c \
+					ft_memalloc_test.c \
 					ft_memdel_test.c \
 					ft_strnew_test.c \
 					ft_strdel_test.c\
@@ -96,7 +97,7 @@ TESTS = ft_memset_test.c \
 					ft_strjoin_test.c \
 					ft_strtrim_test.c \
 					ft_strsplit_test.c \
-					ft_itoa_test.c \
+#					ft_itoa_test.c \
 					ft_putchar_test.c \
 					ft_putstr_test.c \
 					ft_putendl_test.c \

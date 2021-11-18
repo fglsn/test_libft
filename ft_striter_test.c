@@ -7,19 +7,14 @@ void	ft_putstring(char *s)
 }
 
 
-void ft_striter_test(void)
+void ft_striter_check(void)
 {
-	char str[] = "Test striter";
+	char str[] = "Test";
 	ft_striter(str, &ft_putstring);
 
 }
 
-void null_check(void)
+void ft_striter_test(void)
 {
-	ft_striter("sdss", NULL);
-}
-int main(void)
-{
-	ft_striter_test();
-	null_check();
+	ft_striter_check();
 }

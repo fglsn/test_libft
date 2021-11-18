@@ -1,28 +1,37 @@
 #include "libft.h"
-#include <stdio.h>
+#include "test_libft.h"
 
-// int main(void)
-// {
-// 	char const str[3][442] = {
-// 	{"HELLO     World\n\n\n\n\n\n    "} ,
-// 	{"       "} ,
-// 	{"HLOP"}
-// 	};
-// 	printf("\"%s\"\nEmpty str of len %zu: \"%s\"\n\"%s\"\n", ft_strtrim(str[0]), ft_strlen(ft_strtrim(str[1])), ft_strtrim(str[1]), ft_strtrim(str[2]));
-// }
+#define	STR	" \n \t   Some kinda string for testing.       "
+#define	STR_TRIMMED	"Some kinda string for testing."
 
-void strtrim_check_null(void)
+int strtrim_basic()
 {
-	char	*ret;
-	ret = ft_strtrim(NULL);
-	if (!ret)
-		printf("Test OK\n");
-	printf("Test KO");
+	char *str = ft_strtrim(STR);
+	return (!strcmp(str, STR_TRIMMED));
 }
 
-int main(void)
+int strtrim_nothing_to_trim()
 {
-	
-	strtrim_check_null();
-	return (0);
+	char *str = ft_strtrim(STR_TRIMMED);
+	return (!strcmp(str, STR_TRIMMED));
+}
+
+int strtrim_all_spaces()
+{
+	char *str = ft_strtrim("      \n\n \t     ");
+	return (!strcmp(str, ""));
+}
+
+int strtrim_empty()
+{
+	char *str = ft_strtrim("");
+	return (!strcmp(str, ""));
+}
+
+void ft_strtrim_test()
+{
+	TEST_RESULT(strtrim_basic());
+	TEST_RESULT(strtrim_nothing_to_trim());
+	TEST_RESULT(strtrim_all_spaces());
+	TEST_RESULT(strtrim_empty());
 }
