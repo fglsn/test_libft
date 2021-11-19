@@ -1,15 +1,12 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
+#include "test_libft.h"
 
-void	ft_putstr_fd(char const *s, int fd);
-
-int main(int argc, char **argv)
+void ft_putstr_fd_test()
 {
-	if (argc < 2)
-	{
-		printf("Provide an argument");
-	}
-	ft_putstr_fd(argv[1], 0);
+	ft_putstr_fd("Hello", 1);
 	printf("\n");
-	return (0);
+	ft_putstr_fd(" ", 1);
+	printf("\n");
+	ft_putstr_fd("World", 1);
+	printf("\n");
 }

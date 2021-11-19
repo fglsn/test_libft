@@ -6,11 +6,16 @@
 # include <string.h>
 # include <stdio.h>
 
+#define		ANSI_RED		"\x1b[31m"
+#define		ANSI_GREEN		"\033[32;1m"
+#define		ANSI_WHITE		"\033[0m"
+#define 	ANSI_BLUE		"\033[34;1m"
+
 #define TEST_RESULT(RESULT) \
 if (RESULT == 1) \
-	printf("OK: Test %s passed\n", #RESULT); \
+	printf(ANSI_GREEN"OK: Test %s passed\n"ANSI_WHITE, #RESULT); \
 else if (RESULT == 0)\
-	printf("-KO-: Test %s failed\n", #RESULT);
+	printf(ANSI_RED"-KO-: Test %s failed\n"ANSI_WHITE, #RESULT);
 
 #define TEST_CALL(TEST) \
 printf("\n********** " #TEST " **********\n"); \

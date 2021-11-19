@@ -1,16 +1,14 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
+#include "test_libft.h"
 
-void ft_putnbr_fd(int n, int fd);
-
-int main(int argc, char **argv)
+void ft_putnbr_fd_test()
 {
-	if (argc != 2)
-	{
-		printf("Provide an argument\n");
-		return (1);
-	}
-	ft_putnbr_fd(atoi(argv[1]), 2);
+	ft_putnbr_fd(1, 1);
 	printf("\n");
-	return (0);
+	ft_putnbr_fd(-100, 1);
+	printf("\n");
+	ft_putnbr_fd(2147483647, 1);
+	printf("\n");
+	ft_putnbr_fd(-2147483648, 1);
+	printf("\n");
 }
