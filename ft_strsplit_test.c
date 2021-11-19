@@ -5,14 +5,16 @@
 
 int compare(char **str, char **str2)
 {
-	for (; *str; str++ && str2++)
+	while (*str && *str2)
 	{
-		if (*str == NULL || strcmp(*str, *str2))
+		if (strcmp(*str, *str2))
 		{
 			return (0);
 		}
+		str++;
+		str2++;
 	}
-	return (1);
+	return (*str == *str2);
 }
 
 int strsplit_basic()
