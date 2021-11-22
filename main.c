@@ -67,10 +67,10 @@ int main(void)
 	TEST_CALL(ft_putstr_fd_test);
 	TEST_CALL(ft_putendl_fd_test);
 	TEST_CALL(ft_putnbr_fd_test);
-	// TEST_CALL(ft_lstnew_test);
-	// TEST_CALL(ft_lstdelone_test);
-	// TEST_CALL(ft_lstdel_test);
-	// TEST_CALL(ft_lstadd_test);
-	// TEST_CALL(ft_lstiter_test);
-	// TEST_CALL(ft_lstmap_test);
+	TEST_CALL(ft_lstnew_test);
+	TEST_CALL(ft_lstdelone_test);
+	TEST_CALL(ft_lstdel_test);
+	TEST_CALL(ft_lstadd_test);
+	TEST_CALL(ft_lstiter_test);
+	TEST_CALL(ft_lstmap_test);
 }
